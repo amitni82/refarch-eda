@@ -1,909 +1,287 @@
-
-
-
-
-<!doctype html>
-<html lang="en" class="no-js">
-  <head>
-    
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="x-ua-compatible" content="ie=edge">
-      
-      
-      
-      
-        <meta name="lang:clipboard.copy" content="Copy to clipboard">
-      
-        <meta name="lang:clipboard.copied" content="Copied to clipboard">
-      
-        <meta name="lang:search.language" content="en">
-      
-        <meta name="lang:search.pipeline.stopwords" content="True">
-      
-        <meta name="lang:search.pipeline.trimmer" content="True">
-      
-        <meta name="lang:search.result.none" content="No matching documents">
-      
-        <meta name="lang:search.result.one" content="1 matching document">
-      
-        <meta name="lang:search.result.other" content="# matching documents">
-      
-        <meta name="lang:search.tokenizer" content="[\s\-]+">
-      
-      <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.0.1">
-    
-    
-      
-        <title>Event Streams ICP deployment - Event Driven Architecture</title>
-      
-    
-    
-      <link rel="stylesheet" href="../../assets/stylesheets/application.982221ab.css">
-      
-      
-    
-    
-      <script src="../../assets/javascripts/modernizr.1f0bcf2b.js"></script>
-    
-    
-      
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
-        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
-      
-    
-    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
-    
-    
-      <link rel="stylesheet" href="../../extra.css">
-    
-    
-      
-    
-    
-  </head>
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <body dir="ltr">
   
-    <svg class="md-svg">
-      <defs>
-        
-        
-          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
-    viewBox="0 0 416 448" id="__github">
-  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
-        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
-        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
-        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
-        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
-        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
-        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
-        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
-        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
-        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
-        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
-        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
-        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
-        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
-        99.5z" />
-</svg>
-        
-      </defs>
-    </svg>
-    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
-    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Event Streams ICP deployment - Event Driven Architecture</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="../../extra.css" rel="stylesheet">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Event Streams ICP deployment";
+    var mkdocs_page_input_path = "deployments\\eventstreams\\README.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
     
-      <a href="#install-ibm-event-streams-on-icp" tabindex="1" class="md-skip">
-        Skip to content
-      </a>
-    
-    
-      <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid">
-    <div class="md-flex">
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="Event Driven Architecture" class="md-header-nav__button md-logo">
-          
-            <i class="md-icon"></i>
-          
-        </a>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
-      </div>
-      <div class="md-flex__cell md-flex__cell--stretch">
-        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          
-            <span class="md-header-nav__topic">
-              Event Driven Architecture
-            </span>
-            <span class="md-header-nav__topic">
-              Event Streams ICP deployment
-            </span>
-          
-        </div>
-      </div>
-      <div class="md-flex__cell md-flex__cell--shrink">
-        
-          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-          
-<div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
-      <label class="md-icon md-search__icon" for="__search"></label>
-      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
-        &#xE5CD;
-      </button>
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="result">
-          <div class="md-search-result__meta">
-            Type to start searching
-          </div>
-          <ol class="md-search-result__list"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Event Driven Architecture</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
 </div>
-        
       </div>
-      
-        <div class="md-flex__cell md-flex__cell--shrink">
-          <div class="md-header-nav__source">
-            
 
-
-  
-
-<a href="https://github.com/ibm-cloud-architecture/refarch-eda/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-          </div>
-        </div>
-      
-    </div>
-  </nav>
-</header>
-    
-    <div class="md-container">
-      
-        
-      
-      
-      <main class="md-main">
-        <div class="md-main__inner md-grid" data-md-component="container">
-          
-            
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" data-md-level="0">
-  <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="Event Driven Architecture" class="md-nav__button md-logo">
-      
-        <i class="md-icon"></i>
-      
-    </a>
-    Event Driven Architecture
-  </label>
-  
-    <div class="md-nav__source">
-      
-
-
-  
-
-<a href="https://github.com/ibm-cloud-architecture/refarch-eda/" title="Go to repository" class="md-source" data-md-source="github">
-  
-    <div class="md-source__icon">
-      <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__github" width="24" height="24"></use>
-      </svg>
-    </div>
-  
-  <div class="md-source__repository">
-    GitHub
-  </div>
-</a>
-    </div>
-  
-  <ul class="md-nav__list" data-md-scrollfix>
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
-      Home
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../concepts/" title="Concepts" class="md-nav__link">
-      Concepts
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
-    
-    <label class="md-nav__link" for="nav-3">
-      Architecture
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Architecture
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../architecture/" title="Reference diagrams" class="md-nav__link">
-      Reference diagrams
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../evt-src/" title="Event Sources" class="md-nav__link">
-      Event Sources
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../evt-backbone/" title="Event Backbone" class="md-nav__link">
-      Event Backbone
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../evt-action/" title="Event Actions" class="md-nav__link">
-      Event Actions
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../evt-state/" title="Event Managed States" class="md-nav__link">
-      Event Managed States
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../kafka/arch/" title="Event Stream - Kafka architecture" class="md-nav__link">
-      Event Stream - Kafka architecture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://ibm-cloud-architecture.github.io/refarch-data-ai-analytics/preparation/data-replication/" title="Data Replication Pattern" class="md-nav__link">
-      Data Replication Pattern
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
-    
-    <label class="md-nav__link" for="nav-4">
-      Event Storming
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
-        Event Storming
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../methodology/readme/" title="Event Storming Workshop" class="md-nav__link">
-      Event Storming Workshop
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://ibm-cloud-architecture.github.io/refarch-kc/analysis/readme/" title="Applied to Container Shipment Analysis" class="md-nav__link">
-      Applied to Container Shipment Analysis
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../methodology/ddd/" title="Domain driven design" class="md-nav__link">
-      Domain driven design
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      Event driven patterns
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        Event driven patterns
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../evt-microservices/" title="Microservices" class="md-nav__link">
-      Microservices
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../evt-microservices/ED-patterns/" title="Event-driven patterns" class="md-nav__link">
-      Event-driven patterns
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../kafka/kafka-stream/" title="Event streaming processing" class="md-nav__link">
-      Event streaming processing
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://ibm-cloud-architecture.github.io/refarch-data-ai-analytics/preparation/data-replication/" title="Data Replication Pattern" class="md-nav__link">
-      Data Replication Pattern
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../rt-analytics/" title="Real time analytics" class="md-nav__link">
-      Real time analytics
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
-    
-    <label class="md-nav__link" for="nav-7">
-      Reference implementations
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-7">
-        Reference implementations
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="https://ibm-cloud-architecture.github.io/refarch-kc" title="Container shipment implementation solution" class="md-nav__link">
-      Container shipment implementation solution
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
-    
-    <label class="md-nav__link" for="nav-8">
-      Product guidances
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-8">
-        Product guidances
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../kafka/arch/" title="Kafka architecture" class="md-nav__link">
-      Kafka architecture
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../kafka/readme/" title="Kafka concepts summary" class="md-nav__link">
-      Kafka concepts summary
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../kafka/producers/" title="Kafka producer" class="md-nav__link">
-      Kafka producer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../kafka/consumers/" title="Kafka consumer" class="md-nav__link">
-      Kafka consumer
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../kafka/FAQ/" title="Kafka FAQ" class="md-nav__link">
-      Kafka FAQ
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../kafka/" title="Kafka deployment" class="md-nav__link">
-      Kafka deployment
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../zookeeper/" title="Zookeeper deployment" class="md-nav__link">
-      Zookeeper deployment
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="Install_Ceph_on_ICP/" title="Ceph deployment on ICP" class="md-nav__link">
-      Ceph deployment on ICP
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Event Streams ICP deployment
-      </label>
-    
-    <a href="./" title="Event Streams ICP deployment" class="md-nav__link md-nav__link--active">
-      Event Streams ICP deployment
-    </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuration-parameters" title="Configuration Parameters" class="md-nav__link">
-    Configuration Parameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#some-challenges-during-the-installation" title="Some challenges during the installation" class="md-nav__link">
-    Some challenges during the installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started-application" title="Getting started application" class="md-nav__link">
-    Getting started application
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-icp-kafka-installation" title="Verifying ICP Kafka installation" class="md-nav__link">
-    Verifying ICP Kafka installation
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-the-event-stream-cli" title="Using the Event Stream CLI" class="md-nav__link">
-    Using the Event Stream CLI
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#further-readings" title="Further Readings" class="md-nav__link">
-    Further Readings
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../kafka/monitoring/" title="Kafka Monitoring" class="md-nav__link">
-      Kafka Monitoring
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../serverless/" title="Serverless" class="md-nav__link">
-      Serverless
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../postgresql/" title="Postgresql" class="md-nav__link">
-      Postgresql
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../eda-skill-journey/" title="Skill Journey" class="md-nav__link">
-      Skill Journey
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../../compendium/" title="Compendium" class="md-nav__link">
-      Compendium
-    </a>
-  </li>
-
-    
-  </ul>
-</nav>
-                  </div>
-                </div>
-              </div>
-            
-            
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../concepts/">Concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Architecture</span>
+    <ul class="subnav">
+                <li class="">
                     
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#configuration-parameters" title="Configuration Parameters" class="md-nav__link">
-    Configuration Parameters
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#some-challenges-during-the-installation" title="Some challenges during the installation" class="md-nav__link">
-    Some challenges during the installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#getting-started-application" title="Getting started application" class="md-nav__link">
-    Getting started application
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verifying-icp-kafka-installation" title="Verifying ICP Kafka installation" class="md-nav__link">
-    Verifying ICP Kafka installation
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#using-the-event-stream-cli" title="Using the Event Stream CLI" class="md-nav__link">
-    Using the Event Stream CLI
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#further-readings" title="Further Readings" class="md-nav__link">
-    Further Readings
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
+    <a class="" href="../../architecture/">Reference diagrams</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../evt-src/">Event Sources</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../evt-backbone/">Event Backbone</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../evt-action/">Event Actions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../evt-state/">Event Managed States</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../kafka/arch/">Event Stream - Kafka architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="https://ibm-cloud-architecture.github.io/refarch-data-ai-analytics/preparation/data-replication/">Data Replication Pattern</a>
+                </li>
     </ul>
-  
-</nav>
-                  </div>
-                </div>
-              </div>
-            
+	    </li>
           
-          <div class="md-content">
-            <article class="md-content__inner md-typeset">
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Event Storming</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../methodology/readme/">Event Storming Workshop</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="https://ibm-cloud-architecture.github.io/refarch-kc/analysis/readme/">Applied to Container Shipment Analysis</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../methodology/ddd/">Domain driven design</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Event driven patterns</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../evt-microservices/">Microservices</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../evt-microservices/ED-patterns/">Event-driven patterns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../kafka/kafka-stream/">Event streaming processing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="https://ibm-cloud-architecture.github.io/refarch-data-ai-analytics/preparation/data-replication/">Data Replication Pattern</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../rt-analytics/">Real time analytics</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference implementations</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="https://ibm-cloud-architecture.github.io/refarch-kc">Container shipment implementation solution</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Product guidances</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../kafka/arch/">Kafka architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../kafka/readme/">Kafka concepts summary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../kafka/producers/">Kafka producer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../kafka/consumers/">Kafka consumer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../kafka/FAQ/">Kafka FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../kafka/">Kafka deployment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../zookeeper/">Zookeeper deployment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="Install_Ceph_on_ICP/">Ceph deployment on ICP</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">Event Streams ICP deployment</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#install-ibm-event-streams-on-icp">Install IBM Event Streams on ICP</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#configuration-parameters">Configuration Parameters</a></li>
+        
+            <li><a class="toctree-l4" href="#some-challenges-during-the-installation">Some challenges during the installation</a></li>
+        
+            <li><a class="toctree-l4" href="#getting-started-application">Getting started application</a></li>
+        
+            <li><a class="toctree-l4" href="#verifying-icp-kafka-installation">Verifying ICP Kafka installation</a></li>
+        
+            <li><a class="toctree-l4" href="#further-readings">Further Readings</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../kafka/monitoring/">Kafka Monitoring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../serverless/">Serverless</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../postgresql/">Postgresql</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../eda-skill-journey/">Skill Journey</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../compendium/">Compendium</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Event Driven Architecture</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Product guidances &raquo;</li>
+        
+      
+    
+    <li>Event Streams ICP deployment</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/ibm-cloud-architecture/refarch-eda/edit/master/docs/deployments/eventstreams/README.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
               
-                
-                  <a href="https://github.com/ibm-cloud-architecture/refarch-eda/edit/master/docs/deployments/eventstreams/README.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
-                
-                
                 <h1 id="install-ibm-event-streams-on-icp">Install IBM Event Streams on ICP</h1>
 <p><em>(Tested on June 2019 on ibm-eventstreams-dev helm chart 1.2.0 on ICP 3.1.2)</em></p>
 <p>You can use the <code>ibm-eventstreams-dev</code> or <code>ibm-eventstreams-prod</code> Helm chart from ICP catalog. The product installation instructions can be found <a href="https://ibm.github.io/event-streams/installing/installing/">here</a>.  </p>
 <div class="admonition note">
 <p class="admonition-title">Note<p>If you need to upload the tar file for the event streams production (downloaded from IBM passport advantage or other support sites) use the following command:
-<div class="codehilite"><pre><span></span>cloudctl catalog load-archive --archive eventstreams.pak.tar.gz
-</pre></div></p>
+<code>cloudctl catalog load-archive --archive eventstreams.pak.tar.gz</code></p>
 </p>
 </div>
 <p>As we do not want to rewrite the product documentation, we just want to highlight what was done for our deployment. Our cluster has the following characteristics:</p>
@@ -962,8 +340,8 @@
 <p>You can get the details of the release with: <code>helm list 'green-events-streams' --tls</code> or access helm detail via ICP console: Here is the helm release details:</p>
 <p><img alt="" src="images/ies-helm-rel01.png" /></p>
 <p>The figure above shows the following elements:
-<em> ConfigMaps for UI, Kafka proxy
-</em> The five deployments for each major components: UI, REST, proxy and access controller.</p>
+* ConfigMaps for UI, Kafka proxy
+* The five deployments for each major components: UI, REST, proxy and access controller.</p>
 <p>Next is the job list which shows what was run during installation. The panel lists also the current network policies: </p>
 <p><img alt="" src="images/ies-helm-rel02.png" /></p>
 <blockquote>
@@ -979,29 +357,30 @@
 <p>The figure below shows the services for zookeeper, Kafka and Event Stream REST api and user interface:  </p>
 <p><img alt="" src="images/ies-helm-serv.png" /></p>
 <p>The services expose capabilities to external world via nodePort type:
-<em> The IBM Event Streams admin console is visible at the port 31253 on the k8s proxy IP address: 172.16.50.227
-</em> The REST api port 30121
+* The IBM Event Streams admin console is visible at the port 31253 on the k8s proxy IP address: 172.16.50.227
+* The REST api port 30121
 * stream proxy port bootstrap: 31348, broker 0: 32489...</p>
-<p>You get access to the Event Streams admin console by using the IP address of the master  / proxy node and the port number of the service, which you can get using the kubectl get service command like:
-<div class="codehilite"><pre><span></span>kubectl get svc -n streaming &quot;green-events-streams-ibm-es-ui-svc&quot; -o &#39;jsonpath={.spec.ports[?(@.name==&quot;admin-ui-https&quot;)].nodePort}&#39;
+<p>You get access to the Event Streams admin console by using the IP address of the master  / proxy node and the port number of the service, which you can get using the kubectl get service command like:</p>
+<pre class="codehilite"><code>kubectl get svc -n streaming &quot;green-events-streams-ibm-es-ui-svc&quot; -o 'jsonpath={.spec.ports[?(@.name==&quot;admin-ui-https&quot;)].nodePort}'
 
-kubectl cluster-info | grep &quot;catalog&quot; | awk &#39;match($0, /([0-9]{1,3}\.){3}[0-9]{1,3}/) { print substr( $0, RSTART, RLENGTH )}&#39;
-</pre></div></p>
+kubectl cluster-info | grep &quot;catalog&quot; | awk 'match($0, /([0-9]{1,3}\.){3}[0-9]{1,3}/) { print substr( $0, RSTART, RLENGTH )}'</code></pre>
+
+
 <p>Here is the admin console home page:</p>
 <p><img alt="" src="images/event-stream-admin.png" /></p>
 <p>To connect an application or tool to this cluster, you will need the address of a bootstrap server, a certificate and an API key. The page to access this information, is on the top right corner: <code>Connect to this cluster</code>:</p>
 <p><img alt="" src="images/ies-cluster-connection.png" /></p>
 <p>Download certificate and Java truststore files, and the generated API key. A key can apply to all groups or being specific to a group. </p>
 <p>In Java to leverage the api key the code needs to set the some properties:</p>
-<div class="codehilite"><pre><span></span><span class="n">properties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">CommonClientConfigs</span><span class="o">.</span><span class="na">SECURITY_PROTOCOL_CONFIG</span><span class="o">,</span> <span class="s">&quot;SASL_SSL&quot;</span><span class="o">);</span>
-<span class="n">properties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">SaslConfigs</span><span class="o">.</span><span class="na">SASL_MECHANISM</span><span class="o">,</span> <span class="s">&quot;PLAIN&quot;</span><span class="o">);</span>
-<span class="n">properties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">SaslConfigs</span><span class="o">.</span><span class="na">SASL_JAAS_CONFIG</span><span class="o">,</span>
-        <span class="s">&quot;org.apache.kafka.common.security.plain.PlainLoginModule required username=\&quot;token\&quot; password=\&quot;&quot;</span>
-                <span class="o">+</span> <span class="n">env</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;KAFKA_APIKEY&quot;</span><span class="o">)</span> <span class="o">+</span> <span class="s">&quot;\&quot;;&quot;</span><span class="o">);</span>
-<span class="n">properties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">SslConfigs</span><span class="o">.</span><span class="na">SSL_PROTOCOL_CONFIG</span><span class="o">,</span> <span class="s">&quot;TLSv1.2&quot;</span><span class="o">);</span>
-<span class="n">properties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">SslConfigs</span><span class="o">.</span><span class="na">SSL_ENABLED_PROTOCOLS_CONFIG</span><span class="o">,</span> <span class="s">&quot;TLSv1.2&quot;</span><span class="o">);</span>
-<span class="n">properties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">SslConfigs</span><span class="o">.</span><span class="na">SSL_ENDPOINT_IDENTIFICATION_ALGORITHM_CONFIG</span><span class="o">,</span> <span class="s">&quot;HTTPS&quot;</span><span class="o">);</span>
-</pre></div>
+<pre class="codehilite"><code class="language-java">properties.put(CommonClientConfigs.SECURITY_PROTOCOL_CONFIG, &quot;SASL_SSL&quot;);
+properties.put(SaslConfigs.SASL_MECHANISM, &quot;PLAIN&quot;);
+properties.put(SaslConfigs.SASL_JAAS_CONFIG,
+        &quot;org.apache.kafka.common.security.plain.PlainLoginModule required username=\&quot;token\&quot; password=\&quot;&quot;
+                + env.get(&quot;KAFKA_APIKEY&quot;) + &quot;\&quot;;&quot;);
+properties.put(SslConfigs.SSL_PROTOCOL_CONFIG, &quot;TLSv1.2&quot;);
+properties.put(SslConfigs.SSL_ENABLED_PROTOCOLS_CONFIG, &quot;TLSv1.2&quot;);
+properties.put(SslConfigs.SSL_ENDPOINT_IDENTIFICATION_ALGORITHM_CONFIG, &quot;HTTPS&quot;);</code></pre>
+
 
 <p>See code example in <a href="https://github.com/ibm-cloud-architecture/refarch-kc-order-ms/blob/a6b6a2d15085029f5d46b9826806e722a8c27bff/order-command-ms/src/main/java/ibm/labs/kc/order/command/kafka/ApplicationConfig.java#L71-L86">ApplicationConfig.java</a>.</p>
 <h2 id="some-challenges-during-the-installation">Some challenges during the installation</h2>
@@ -1018,135 +397,115 @@ We have seen some Kafka brokers that could not be scheduled because some nodes h
 <p><img alt="" src="images/ies-start-app-run2.png" /> </p>
 <p>We have two solution implementations using Kafka and Event Streams <a href="https://github.com/ibm-cloud-architecture/refarch-asset-analytics">the manufacturing asset analytics</a> and the  most recent <a href="https://github.com/ibm-cloud-architecture/refarch-kc">KC container shipment solution</a>. We recommend using the second implementation.</p>
 <h2 id="verifying-icp-kafka-installation">Verifying ICP Kafka installation</h2>
-<p>Once connected to the cluster with kubectl, get the list of pods for the namespace you used to install Kafka or IBM Event Streams:
-<div class="codehilite"><pre><span></span>$ kubectl get pods -n streaming
+<p>Once connected to the cluster with kubectl, get the list of pods for the namespace you used to install Kafka or IBM Event Streams:</p>
+<pre class="codehilite"><code>$ kubectl get pods -n streaming
 
 NAME                                                              READY     STATUS    RESTARTS
-green-even-c353-ibm-es-elas-ad8d-0                                <span class="m">1</span>/1       Running   <span class="m">0</span>          3d
-green-even-c353-ibm-es-elas-ad8d-1                                <span class="m">1</span>/1       Running   <span class="m">0</span>          3d
-green-even-c353-ibm-es-kafka-sts-0                                <span class="m">4</span>/4       Running   <span class="m">2</span>          3d
-green-even-c353-ibm-es-kafka-sts-1                                <span class="m">4</span>/4       Running   <span class="m">2</span>          3d
-green-even-c353-ibm-es-kafka-sts-2                                <span class="m">4</span>/4       Running   <span class="m">5</span>          3d
-green-even-c353-ibm-es-zook-c4c0-0                                <span class="m">1</span>/1       Running   <span class="m">0</span>          3d
-green-even-c353-ibm-es-zook-c4c0-1                                <span class="m">1</span>/1       Running   <span class="m">0</span>          3d
-green-even-c353-ibm-es-zook-c4c0-2                                <span class="m">1</span>/1       Running   <span class="m">0</span>          3d
-green-events-streams-ibm-es-access-controller-deploy-7cbf8jjs9n   <span class="m">2</span>/2       Running   <span class="m">0</span>          3d
-green-events-streams-ibm-es-access-controller-deploy-7cbf8st95z   <span class="m">2</span>/2       Running   <span class="m">0</span>          3d
-green-events-streams-ibm-es-indexmgr-deploy-6ff759779-c8ddc       <span class="m">1</span>/1       Running   <span class="m">0</span>          3d
-green-events-streams-ibm-es-proxy-deploy-777d6cf76c-bxjtq         <span class="m">1</span>/1       Running   <span class="m">0</span>          3d
-green-events-streams-ibm-es-proxy-deploy-777d6cf76c-p8rkc         <span class="m">1</span>/1       Running   <span class="m">0</span>          3d
-green-events-streams-ibm-es-rest-deploy-547cc6f9b-774xx           <span class="m">3</span>/3       Running   <span class="m">0</span>          3d
-green-events-streams-ibm-es-ui-deploy-7f9b9c6c6f-kvvs2            <span class="m">3</span>/3       Running   <span class="m">0</span>          3d
-</pre></div></p>
-<p>Select the first pod: green-even-c353-ibm-es-kafka-sts-0 , then execute a bash shell so you can access the Kafka tools:
-<div class="codehilite"><pre><span></span>$ kubectl <span class="nb">exec</span> green-even-c353-ibm-es-kafka-sts-0 -itn streaming -- bash
-bash-3.4# <span class="nb">cd</span> /opt/Kafka/bin
-</pre></div>
-Now you have access to the kafka tools. The most important thing is to get the hostname and port number of the zookeeper server. To do so use the kubectl command:
-<div class="codehilite"><pre><span></span>$ kubectl describe pods green-even-c353-ibm-es-zook-c4c0-0  --namespace streaming
-</pre></div>
-In the long result get the client port ( ZK_CLIENT_PORT: 2181) information and IP address (IP: 192.168.76.235). Using this information, in the bash shell within the Kafka broker server we can do the following command to get the topics configured.</p>
-<div class="codehilite"><pre><span></span>$ ./Kafka-topics.sh --list -zookeeper  <span class="m">192</span>.168.76.235:2181
-<span class="c1"># We can also use the service name of zookeeper and let k8s DNS resolve the IP address</span>
-$ ./Kafka-topics.sh --list -zookeeper  green-even-c353-ibm-es-zook-c4c0-0.streaming.svc.cluster.local:2181
-</pre></div>
+green-even-c353-ibm-es-elas-ad8d-0                                1/1       Running   0          3d
+green-even-c353-ibm-es-elas-ad8d-1                                1/1       Running   0          3d
+green-even-c353-ibm-es-kafka-sts-0                                4/4       Running   2          3d
+green-even-c353-ibm-es-kafka-sts-1                                4/4       Running   2          3d
+green-even-c353-ibm-es-kafka-sts-2                                4/4       Running   5          3d
+green-even-c353-ibm-es-zook-c4c0-0                                1/1       Running   0          3d
+green-even-c353-ibm-es-zook-c4c0-1                                1/1       Running   0          3d
+green-even-c353-ibm-es-zook-c4c0-2                                1/1       Running   0          3d
+green-events-streams-ibm-es-access-controller-deploy-7cbf8jjs9n   2/2       Running   0          3d
+green-events-streams-ibm-es-access-controller-deploy-7cbf8st95z   2/2       Running   0          3d
+green-events-streams-ibm-es-indexmgr-deploy-6ff759779-c8ddc       1/1       Running   0          3d
+green-events-streams-ibm-es-proxy-deploy-777d6cf76c-bxjtq         1/1       Running   0          3d
+green-events-streams-ibm-es-proxy-deploy-777d6cf76c-p8rkc         1/1       Running   0          3d
+green-events-streams-ibm-es-rest-deploy-547cc6f9b-774xx           3/3       Running   0          3d
+green-events-streams-ibm-es-ui-deploy-7f9b9c6c6f-kvvs2            3/3       Running   0          3d</code></pre>
+
+
+<p>Select the first pod: green-even-c353-ibm-es-kafka-sts-0 , then execute a bash shell so you can access the Kafka tools:</p>
+<pre class="codehilite"><code>$ kubectl exec green-even-c353-ibm-es-kafka-sts-0 -itn streaming -- bash
+bash-3.4# cd /opt/Kafka/bin</code></pre>
+
+
+<p>Now you have access to the kafka tools. The most important thing is to get the hostname and port number of the zookeeper server. To do so use the kubectl command:</p>
+<pre class="codehilite"><code>$ kubectl describe pods green-even-c353-ibm-es-zook-c4c0-0  --namespace streaming</code></pre>
+
+
+<p>In the long result get the client port ( ZK_CLIENT_PORT: 2181) information and IP address (IP: 192.168.76.235). Using this information, in the bash shell within the Kafka broker server we can do the following command to get the topics configured.</p>
+<pre class="codehilite"><code class="language-shell">$ ./Kafka-topics.sh --list -zookeeper  192.168.76.235:2181
+# We can also use the service name of zookeeper and let k8s DNS resolve the IP address
+$ ./Kafka-topics.sh --list -zookeeper  green-even-c353-ibm-es-zook-c4c0-0.streaming.svc.cluster.local:2181</code></pre>
+
 
 <h3 id="using-the-event-stream-cli">Using the Event Stream CLI</h3>
-<p>If not done already, you can install the Event Stream CLI on top of IBM cloud CLI by first downloading it from the Event Stream console and then running this command:
-<div class="codehilite"><pre><span></span>$ cloudctl plugin install ./es-plugin
-</pre></div></p>
-<p>Here is a simple summary of the possible <code>cloudctl es</code> commands:
-<div class="codehilite"><pre><span></span><span class="c1"># Connect to the cluster</span>
+<p>If not done already, you can install the Event Stream CLI on top of IBM cloud CLI by first downloading it from the Event Stream console and then running this command:</p>
+<pre class="codehilite"><code>$ cloudctl plugin install ./es-plugin</code></pre>
+
+
+<p>Here is a simple summary of the possible <code>cloudctl es</code> commands:</p>
+<pre class="codehilite"><code class="language-shell"># Connect to the cluster
 cloudctl es init
 
-<span class="c1"># create a topic  - default is 3 replicas</span>
+# create a topic  - default is 3 replicas
 cloudctl es topic-create streams-plaintext-input
-cloudctl es topic-create streams-wordcount-output --replication-factor <span class="m">1</span> --partitions <span class="m">1</span>
+cloudctl es topic-create streams-wordcount-output --replication-factor 1 --partitions 1
 
-<span class="c1"># list topics</span>
+# list topics
 cloudctl es topics
 
-<span class="c1"># delete topic</span>
-cloudctl es topic-delete streams-plaintext-input
-</pre></div></p>
+# delete topic
+cloudctl es topic-delete streams-plaintext-input</code></pre>
+
+
 <h2 id="further-readings">Further Readings</h2>
 <ul>
 <li><a href="https://www.ibm.com/cloud/event-streams">IBM Event Streams main page</a></li>
 <li><a href="https://ibm.github.io/event-streams">IBM Event Streams Product Documentation</a></li>
 </ul>
-                
-                  
-                
               
-              
-                
-
-
-              
-            </article>
+            </div>
           </div>
-        </div>
-      </main>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        
-<footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="Install_Ceph_on_ICP/" title="Ceph deployment on ICP" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Ceph deployment on ICP
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../../kafka/monitoring/" title="Kafka Monitoring" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Kafka Monitoring
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
-  
-  <div class="md-footer-meta md-typeset">
-    <div class="md-footer-meta__inner md-grid">
-      <div class="md-footer-copyright">
-        
-        powered by
-        <a href="https://www.mkdocs.org">MkDocs</a>
-        and
-        <a href="https://squidfunk.github.io/mkdocs-material/">
-          Material for MkDocs</a>
-      </div>
+        <a href="../../kafka/monitoring/" class="btn btn-neutral float-right" title="Kafka Monitoring">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="Install_Ceph_on_ICP/" class="btn btn-neutral" title="Ceph deployment on ICP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
   </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-    </div>
-    
-      <script src="../../assets/javascripts/application.b806dc00.js"></script>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
       
-      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+          <a href="https://github.com/ibm-cloud-architecture/refarch-eda/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
-    
-  </body>
+      
+        <span><a href="Install_Ceph_on_ICP/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../kafka/monitoring/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+
+</body>
 </html>

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <title>Event Driven Architecture</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link href="./extra.css" rel="stylesheet">
+  
+  <script src="./js/jquery-2.1.1.min.js" defer></script>
+  <script src="./js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="./." class="icon icon-home"> Event Driven Architecture</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="./.">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="./concepts/">Concepts</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Architecture</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="./architecture/">Reference diagrams</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./evt-src/">Event Sources</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./evt-backbone/">Event Backbone</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./evt-action/">Event Actions</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./evt-state/">Event Managed States</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./kafka/arch/">Event Stream - Kafka architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="https://ibm-cloud-architecture.github.io/refarch-data-ai-analytics/preparation/data-replication/">Data Replication Pattern</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Event Storming</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="./methodology/readme/">Event Storming Workshop</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="https://ibm-cloud-architecture.github.io/refarch-kc/analysis/readme/">Applied to Container Shipment Analysis</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./methodology/ddd/">Domain driven design</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Event driven patterns</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="./evt-microservices/">Microservices</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./evt-microservices/ED-patterns/">Event-driven patterns</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./kafka/kafka-stream/">Event streaming processing</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="https://ibm-cloud-architecture.github.io/refarch-data-ai-analytics/preparation/data-replication/">Data Replication Pattern</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="./rt-analytics/">Real time analytics</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Reference implementations</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="https://ibm-cloud-architecture.github.io/refarch-kc">Container shipment implementation solution</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Product guidances</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="./kafka/arch/">Kafka architecture</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./kafka/readme/">Kafka concepts summary</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./kafka/producers/">Kafka producer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./kafka/consumers/">Kafka consumer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./kafka/FAQ/">Kafka FAQ</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./deployments/kafka/">Kafka deployment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./deployments/zookeeper/">Zookeeper deployment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./deployments/eventstreams/Install_Ceph_on_ICP/">Ceph deployment on ICP</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./deployments/eventstreams/">Event Streams ICP deployment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./kafka/monitoring/">Kafka Monitoring</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./serverless/">Serverless</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="./deployments/postgresql/">Postgresql</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="./eda-skill-journey/">Skill Journey</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="./compendium/">Compendium</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="./.">Event Driven Architecture</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="./.">Docs</a> &raquo;</li>
+    
+    
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+
+  <h1 id="search">Search Results</h1>
+
+  <form id="content_search" action="search.html">
+    <span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+    <input name="q" id="mkdocs-search-query" type="text" class="search_input search-query ui-autocomplete-input" placeholder="Search the Docs" autocomplete="off" autofocus title="Type search term here">
+  </form>
+
+  <div id="mkdocs-search-results" class="search-results">
+    Searching...
+  </div>
+
+
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/ibm-cloud-architecture/refarch-eda/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="./js/theme.js" defer></script>
+      <script src="./search/main.js" defer></script>
+
+</body>
+</html>
